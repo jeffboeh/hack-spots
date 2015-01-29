@@ -8,7 +8,7 @@
 		<script type="text/javascript" src='js/sheetsee.js'></script>
 		<script type="text/javascript" src='js/leaflet.markercluster.js'></script>
 		<link rel="shortcut icon" href="https://raw.github.com/jlord/hack-spots/master/favico.png"/>
-
+ 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<link href='http://api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.css' rel='stylesheet' />
 		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic'>
@@ -48,17 +48,17 @@
 			<div id="theNumberofSpots"></div>
 			<p>This website is hooked up to <a href="https://docs.google.com/spreadsheets/d/1DCOympwsewKKgMjiJvDP37rKrcqXgktIR-Lv1fO68-c/edit?usp=sharing" target="_blank">this Google Spreadsheet</a>, which I've shared, so click and add your favorite local tech startups to the bottom of the list! For the map you'll need to <strong>get the lat and long</strong> of the spot, you can get that <a href="http://www.latlong.net/" target="_blank">here</a>. The locating of these places is helpful, so please try to fill out all the columns.</p>
 			<p>If you would not like to add them to the map yourself - please email them to jeff@theironyard.com</p>
-
+ 
 			<h3>Info</h3>
 			<p>How many startups are there in Spartanburg? How many will there be in few years? Do you know all of them and what they do? <strong>Why not!?</strong> Let's not only make the existing startups more accesible, but enable us to physically watch the growth in the next few years.</p>
-
+ 
 			<p>Besides being a list I've wanted to have, it's a fantastic (or I think so) way of using <a href="http://jlord.github.io/sheetsee.js" target="_blank">sheetsee.js</a>, which is a little JavaScript library I've been working on. Sheetsee.js helps you hook a Google Spreadsheet (awesome for data and collaboration!) to a website to make data more visual (maps, tables, charts).</p>
-
+ 
 			<h3>Fork-n-Go</h3>
 			<p>This is a work-in-progress example of a fork-n-go project - which means, there is just a <a href="https://github.com/jlord/hack-spots" target="_blank">gh-pages branch in GitHub</a> for this project so when you fork it, you've got a live and hosted website instantly. BAM! Just copy the spreadsheet headers and create your own spreadsheet, swap out the spreadsheet key in index.html and commit those changes. BAM! You've got a live and hosted site with a spreadsheet you control. More on the <a href="http://www.github.com/jlord/hack-spots" target="_blank">readme</a>.</p>
 		</div>
 	</div><!-- end wrapper -->
-
+ 
 	<script id="hackSpotsTable" type="text/html">
 		<table>
 		<tr><th class="tHeader">Name</th><th class="tHeader">Address</th><th class="tHeader">City</th><th class="tHeader">State</th><th class="tHeader">Country</th><th class="">Elsewhere</th></tr>
@@ -68,7 +68,7 @@
 		  {{/rows}}
 	  </table>
 	</script>
-
+ 
 	<script id="latestSpot" type="text/html">
 			{{#rows}}
 				<h4 class="fauxButton">MOST RECENT SPOT</h4>
@@ -76,12 +76,12 @@
 				<p class="colorText">{{address}}<p>
 				<p class="colorText">{{city}}, {{state}} {{#postcode}}, {{postcode}} {{/postcode}}</p>
 				<ul>
-			  	<li><span class="category">Market:</span> {{Market}}</li>
-			  	<li><span class="category">Outlets:</span> {{outlets}}</li>
-			  	<li><span class="category">Couch:</span> {{couch}}</li>
-			  	<li><span class="category">Large Table:</span> {{largetable}}</li>
-			  	<li><span class="category">Outdoor Seating:</span> {{outdoorseating}}</li>
-			  	<li><span class="category">Brewing:</span> {{brewing}}</li>
+			  	<li><span class="category">Market:</span> {{market}}</li>
+			  	<li><span class="category">Services/Products:</span> {{services}}</li>
+			  	<li><span class="category">Website:</span> {{website}}</li>
+			  	<li><span class="category">Owner:</span> {{owner}}</li>
+			  	<li><span class="category">Email:</span> {{email}}</li>
+			  	
 			  	<li><span class="category">Contributed By:</span> <a href="http://www.twitter.com/{{contributerstwitter}}" target="_blank">@{{contributerstwitter}}</a></li>
 		  	</ul>
 		  	<ul>
@@ -90,15 +90,15 @@
 		  	</ul>
 		  {{/rows}}
 	</script>
-
+ 
 	<script id="theNumberofSpots" type="text/html">
 		<p><strong><span class="red-text">{{numberOfSpots}}</span> hack spots strong!</p>
 	</script>
-
+ 
 	<script id="popUps" type="text/html">
 		<h2>{{ name }}</h2>
 	</script>
-
+ 
 	<script id="selectedSpot" type="text/html">
 		{{#rows}}
 			<h4 class="fauxButton">SELECTED SPOT</h4>
@@ -106,12 +106,11 @@
 			<p class="colorText">{{address}}<p>
 			<p class="colorText">{{city}}, {{state}} {{#postcode}}, {{postcode}} {{/postcode}}</p>
 			<ul>
-		  	<li><span class="category">Wifi:</span> {{wifipassword}}</li>
-		  	<li><span class="category">Outlets:</span> {{outlets}}</li>
-		  	<li><span class="category">Couch:</span> {{couch}}</li>
-		  	<li><span class="category">Large Table:</span> {{largetable}}</li>
-		  	<li><span class="category">Outdoor Seating:</span> {{outdoorseating}}</li>
-		  	<li><span class="category">Brewing:</span> {{brewing}}</li>
+		  	<li><span class="category">Market:</span> {{market}}</li>
+		  	<li><span class="category">Services/Products:</span> {{services}}</li>
+		  	<li><span class="category">Website:</span> {{website}}</li>
+		  	<li><span class="category">Owner:</span> {{owner}}</li>
+		  	<li><span class="category">Email:</span> {{email}}</li>
 	  	</ul>
 	  	<ul>
 	  		<li><a href="https://maps.google.com/maps?q={{address}},{{city}},{{state}}" target="_blank">View in Google Maps</a></li>
@@ -119,7 +118,7 @@
 	  	</ul>
 	  {{/rows}}
 	</script>
-
+ 
 	<script type="text/javascript">
 	  document.addEventListener('DOMContentLoaded', function() {
 	  	var gData
