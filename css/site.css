@@ -42,6 +42,20 @@ ul.nav li a:hover {border-bottom: 1px #FD9393 solid;}
 .fauxButton .selected {background-color: #FF4646;}
 .colorText {color: #FF4646; text-transform: uppercase; font-weight: 700;}
 
+body .bg {
+background-color: #eeeff1;
+position: fixed;
+width: 100%;
+height: 100%;
+min-height: 100%;
+top: 0;
+left: 0;
+z-index: -1;
+background-position: center center;
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-size: cover;
+}
 .leaflet-popup-content h2 {font-family: Lato; font-size: 14px; text-transform: uppercase;}
 
 #rightSide {height: 400px; max-width: 350px; width: 100%; float: right; padding-top: 5px;}
